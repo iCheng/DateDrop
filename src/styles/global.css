@@ -1,0 +1,65 @@
+@import url('https://fonts.googleapis.com/css2?family=Ma+Shan+Zheng&family=Noto+Sans+SC:wght@500;700;800;900&display=swap');
+
+:root {
+  font-family: 'Noto Sans SC', 'PingFang SC', 'Microsoft YaHei', sans-serif;
+  color: #111;
+  background: #fff;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  min-width: 320px;
+  margin: 0;
+  overflow-x: hidden;
+}
+
+button {
+  font: inherit;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.page-shell {
+  min-height: 100svh;
+  padding: 32px 20px 42px;
+  overflow: hidden;
+}
+
+.comic-button {
+  min-width: 147px;
+  height: 56px;
+  padding: 0 24px;
+  border: 3px solid #111;
+  border-radius: 999px;
+  background: #e94b9b;
+  box-shadow: 6px 6px 0 #111;
+  color: #111;
+  cursor: pointer;
+  font-size: 18px;
+  font-weight: 900;
+  letter-spacing: .03em;
+  transition: box-shadow .12s ease, transform .12s ease, background .2s ease;
+  touch-action: manipulation;
+
+  &:focus-visible {
+    outline: 3px solid #ff93c4;
+    outline-offset: 5px;
+  }
+
+  &:active {
+    box-shadow: 0 0 0 #111;
+  }
+}
+
+@media (max-width: 360px) {
+  .page-shell {
+    padding-inline: 16px;
+  }
+
+  .comic-button {
+    min-width: 130px;
+    padding-inline: 16px;
+  }
+}
