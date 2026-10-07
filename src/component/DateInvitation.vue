@@ -1,5 +1,7 @@
 <script setup lang="ts">
 import { ref } from 'vue'
+import TeddyBear from './lottie/TeddyBear.vue'
+import FloatingHeart from './lottie/FloatingHeart.vue'
 
 defineProps<{
   guestName: string
@@ -22,13 +24,17 @@ function toggleNoButton() {
 <template>
   <main class="page-shell">
     <section class="invite-card" aria-labelledby="invite-title">
-      <div class="sparkle sparkle-one" aria-hidden="true">✦</div>
-      <div class="sparkle sparkle-two" aria-hidden="true">♡</div>
+      <!-- <div class="sparkle sparkle-one" aria-hidden="true">✦</div>
+      <div class="sparkle sparkle-two" aria-hidden="true">♡</div> -->
 
-      <div class="illustration-placeholder" role="img" aria-label="约会邀请插画占位符">
-        <!-- 收到图片链接后，将此 div 内部替换为：<img src="图片链接" alt="小动物抱着爱心" /> -->
+      <!-- 爱心特效 -->
+      <FloatingHeart></FloatingHeart>
+      <!-- 小熊特效 -->
+      <TeddyBear class="illustration-placeholder"></TeddyBear>
+
+      <!-- <div class="illustration-placeholder" role="img" aria-label="约会邀请插画占位符">
         <span class="placeholder-sticker">♡</span>
-      </div>
+      </div> -->
 
       <p v-if="guestName" class="greeting">hi {{ guestName }}</p>
       <h1 id="invite-title">有时间和我约会嘛？</h1>
@@ -57,27 +63,27 @@ function toggleNoButton() {
     display: grid;
     width: min(250px, 78vw);
     aspect-ratio: 1;
-    margin: 0 auto;
+    margin: 20px auto 0px auto; 
     overflow: hidden;
     place-content: center;
-    border: 3px solid #111;
+    /* border: 3px solid #111; */
     border-radius: 30px;
-    background: #ffd6e8;
-    box-shadow: 7px 7px 0 #111;
+    /* background: #ffd6e8;  */
+    /* box-shadow: 7px 7px 0 #111; */
     color: #e94b9b;
     transform: rotate(-1.2deg);
 
-    &::before,
+    /* &::before,
     &::after {
       position: absolute;
       content: '';
       border: 3px solid #111;
       border-radius: 50%;
       background: #ffb5d6;
-    }
+    } */
 
-    &::before { width: 29px; height: 29px; top: 25px; left: 34px; }
-    &::after { width: 14px; height: 14px; right: 31px; bottom: 32px; }
+    /* &::before { width: 29px; height: 29px; top: 25px; left: 34px; }
+    &::after { width: 14px; height: 14px; right: 31px; bottom: 32px; } */
 
     .placeholder-sticker { display: block; font: 100px/.75 'Ma Shan Zheng', cursive; color: #fff; -webkit-text-stroke: 3px #111; text-shadow: 4px 4px 0 #e94b9b; }
     p { position: relative; z-index: 1; margin: 21px 0 0; color: #111; font-size: 13px; font-weight: 800; letter-spacing: .06em; line-height: 1.35; }
@@ -97,7 +103,7 @@ function toggleNoButton() {
 
   .sparkle { position: absolute; z-index: -1; color: #ff8bbe; font-family: 'Ma Shan Zheng', cursive; font-size: 29px; -webkit-text-stroke: 1.2px #111; }
   .sparkle-one { top: 88px; left: clamp(2px, 4vw, 20px); transform: rotate(-15deg); }
-  .sparkle-two { top: 257px; right: clamp(2px, 4vw, 18px); font-size: 31px; transform: rotate(15deg); }
+  .sparkle-two { top: 157px; right: clamp(2px, 4vw, 18px); font-size: 31px; transform: rotate(15deg); }
 }
 
 @media (max-width: 360px) {

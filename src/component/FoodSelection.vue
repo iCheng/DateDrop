@@ -156,7 +156,7 @@ function confirmFoods() {
   .food-option {
     display: flex;
     min-height: 60px;
-    padding: 10px 6px;
+    padding: 15px 6px 5px 6px;
     flex-direction: column;
     align-items: center;
     border: 2px solid #111;

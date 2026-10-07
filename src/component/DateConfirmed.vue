@@ -3,6 +3,7 @@ import { ref } from "vue";
 import { getInvitationData } from "../store/invitation";
 import { meetingOptions } from "../constants/meeting";
 import { createElementImage, downloadImage } from "../utils/saveImage";
+import Confetti from './lottie/Confetti.vue'
 
 defineProps<{
   guestName: string;
@@ -44,6 +45,8 @@ async function saveDateImage() {
       class="final-card"
       aria-labelledby="final-title"
     >
+      <!-- 撒花特效 -->
+      <Confetti></Confetti>
       <div class="final-heart" aria-hidden="true">♥</div>
       <p class="page-kicker">IT'S A DATE!</p>
       <h1 id="final-title">太好啦，约会成立！</h1>
